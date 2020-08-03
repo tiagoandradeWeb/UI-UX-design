@@ -29,6 +29,36 @@
 		</nav>
 	</div>
 </header>
+<!--Main-->
+<section class="container main">
+	<div class="col-1">
+		<h1>UI / UX Design</h1>
+		<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>
+		<a href="#">Learn More <img src="assets/arrow.svg" alt=""></a>
+		<div class="slider">
+		<div class="arrows">
+   		<div class="prev"><i class="fas fa-arrow-left left"></i></div>
+		<div class="next"><i class="fas fa-arrow-right right"></i></div>
+		</div>
+		
+			<div class="swiper-container">
+    		<!-- Additional required wrapper -->
+    			<div class="swiper-wrapper">
+        	<!-- Slides -->
+        			<div class="swiper-slide"><img src="assets/Customize.png" alt=""></div>
+        			<div class="swiper-slide"><img src="assets/e-Commerce.png" alt=""></div>
+        			<div class="swiper-slide"><img src="assets/Error.png" alt=""></div>
+        			<div class="swiper-slide"><img src="assets/Location.png" alt=""></div>
+        			<div class="swiper-slide"><img src="assets/Product%20Launch.png" alt=""></div>
+        			<div class="swiper-slide"><img src="assets/Instagram%20Shot.png" alt=""></div>
+    			</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-2">
+		<img src="assets/Coding.png" alt="">
+	</div>
+</section>
 <script src="js/all.min.js"></script>
 <script src="js/swiper.min.js"></script>
 <script src="js/wow.js"></script>
@@ -36,5 +66,17 @@
 <script>
 	new WOW().init();//iniciando o wow animation
 </script>   
+<script>
+	var mySwiper = new Swiper('.swiper-container', {
+  // Optional parameters
+		slidesPerView: 3,
+		spaceBetween: 20,
+  		loop: true,
+		navigation: {
+    		nextEl: '.prev',
+    		prevEl: '.next',
+  },
+	});
+</script>
 </body>
 </html>
