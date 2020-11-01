@@ -16,10 +16,10 @@
 }
 /*CSS Geral*/
 *{padding: 0; margin:0; box-sizing: border-box; outline: none; text-decoration: none; list-style: none;}
-img{max-width: 100%;}
+img{max-width: 100%; display: block;}
 body, html{font-family: 'Roboto'; font-size: 100%;}
 .container{max-width: 1180px; margin: 0 auto;}
-.title{margin: 130px 0px; width: 100%; text-align: center;}
+.title{margin: 80px 0px; width: 100%; text-align: center;}
 .title h2{color: var(--primary); font-weight: 600;}
 .title .separator{width: 70px; height: 2px; background: var(--second); margin: 0 auto; margin-top: 5px;}
 
@@ -34,7 +34,7 @@ body, html{font-family: 'Roboto'; font-size: 100%;}
 .menu-toggle{width: 35px; height: 35px; flex-direction: column; /*border: solid 1px black;*/ justify-content: space-around; cursor: pointer; display: none; z-index: 10;}
 .one, .two, .three{width: 100%; height: 4px; background: var(--primary); transition-duration: 0.3s;}
 
-.top .nav.on{width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; position: absolute; top: 0; left: -100%; background: var(--primary); transition:.4s;}
+.top .nav.on{width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; position: fixed; top: 0; left: -100%; background: var(--primary); transition:.4s;}
 .top .nav.on ul{flex-direction: column;}
 .top .nav.on ul li a{color: #fff; display: block; width: 100%; font-size: 1.4rem; padding: 15px; text-align: center; transition: var(--transition);}
 .top .nav.on ul li a:hover{color:var(--second);}
@@ -89,19 +89,52 @@ body, html{font-family: 'Roboto'; font-size: 100%;}
 /*About*/
 .about .container{display: flex;}
 .about .container .col-1{width: 60%;}
-.about .container .col-2{width: 40%}
+.about .container .col-2{width: 40%;}
 .about .container .col-1 h2{color: var(--primary); font-size: 2em; text-transform: uppercase;}
 .about .container .col-1 h3{color: var(--second); font-size: 2em; text-transform: uppercase;}
 .about .container .col-1 p{color: var(--p); margin-top: 20px; font-size: 0.9rem;}
-.about .container .col-1 a{color: var(--second);margin: 30px 0; display: flex; align-items: center; font-weight: bold;}
+.about .container .col-1 a{color: var(--second); margin: 30px 0; display: flex; align-items: center; font-weight: bold;}
 .about .col-1 a img{margin-left: 5px; transition: var(--transition);}
 .about .col-1 a:hover img{margin-left: 10px;}
 .about .container .col-2 .image-about{display: flex; justify-content: flex-end;}
 
 @media (max-width: 850px){
+	.title{margin: 70px 0px;}
 	.about .container{flex-direction: column;}
 	.about .container .col-1{width: 100%; text-align:left;}
+	.about .container .col-1 h2{color: var(--primary); font-size: 1.7rem;}
+	.about .container .col-1 h3{color: var(--second); font-size: 1.7rem;}
 	.about .container .col-1 a{margin: 30px 0 0 0;}
-	.about .container .col-2{display: block; width: 100%; margin-top: 30px;}
+	.about .container .col-2{width: 100%; margin-top: 30px;}
 	}
 
+
+/*Team*/
+.team-title{ width: 100%; text-align: center;}
+.team-title h1{color: var(--primary); text-transform: uppercase; font-family: "Roboto-bold";font-weight: 300;}
+.team-title p{color: var(--p); margin-top: 15px; font-size: 14px;}
+.team-section{display: flex; margin-top: 80px;}
+.col-img{flex-grow: 1;}
+.col-img img{}
+.col-team{flex-grow: 4; display: flex; justify-content: space-between;}
+.team-box{position: relative; height: 290px;}
+.team-box img{width: 100%;}
+.team-box:last-child{margin-right: 0;}
+.team-box::before{content: ""; position: absolute; width: 180px; height: 180px; top: -15px; left: -15px; border: solid 2px var(--second); border-style: dashed; z-index: -1;}
+.team-description{padding-top: 10px; text-align: center; box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.1); border-bottom-left-radius: 3px; border-bottom-right-radius: 3px;}
+.team-description h2{text-transform: uppercase; font-size: 19px; font-weight:; color: var(--primary);}
+.team-description h3{color: var(--p); font-size: 12px; font-weight: 100;}
+.social{ display: flex; justify-content: center;}
+.social a{color: var(--second); font-size: 20px; display: inline-block; padding: 10px; transition: var(--transition)}
+.social a:hover{opacity: 0.7;}
+
+@media (max-width: 850px){
+	.team-section{margin-top: 50px;}
+	.col-img{display: none;}
+	.col-team{flex-direction: column; justify-content: center; align-content: center; align-items: center;}
+	.team-box{width: 55%; margin: 50px 0px; height: auto;}
+	.team-box::before{width: 220px; height: 220px}
+}
+@media (max-width: 463px){
+    .team-box::before{width: 150px; height: 150px}
+}
