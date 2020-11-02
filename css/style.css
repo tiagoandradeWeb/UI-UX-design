@@ -22,6 +22,7 @@ body, html{font-family: 'Roboto'; font-size: 100%;}
 .title{margin: 80px 0px; width: 100%; text-align: center;}
 .title h2{color: var(--primary); font-weight: 600;}
 .title .separator{width: 70px; height: 2px; background: var(--second); margin: 0 auto; margin-top: 5px;}
+.title p{color: var(--p); font-size: 14px; margin-top: 20px;}
 
 .top .container{display: flex; justify-content: space-between; align-items: center; align-content: center; height: 70px;}
 .logo h1{color: var(--primary); font-size: 1.4rem; font-weight: bold;}
@@ -130,6 +131,7 @@ body, html{font-family: 'Roboto'; font-size: 100%;}
 
 @media (max-width: 850px){
 	.team-section{margin-top: 50px;}
+    .team-title p{padding: 0 25px;}
 	.col-img{display: none;}
 	.col-team{flex-direction: column; justify-content: center; align-content: center; align-items: center;}
 	.team-box{width: 55%; margin: 50px 0px; height: auto;}
@@ -137,4 +139,30 @@ body, html{font-family: 'Roboto'; font-size: 100%;}
 }
 @media (max-width: 463px){
     .team-box::before{width: 150px; height: 150px}
+}
+
+/*Portifolio*/
+.portifolio-box{width: 100%; display: flex; flex-wrap: wrap; position: relative;}
+.box-img{width: 25%; overflow:hidden; position: relative;}
+.box-img img{transition: var(--transition);}
+.box-img:hover img{transform: scale(1.2);}
+.box-img img{width: 100%;}
+.btn-portifolio{display: flex; margin: auto; margin-top:80px; background: var(--second); color: #fff; padding: 10px 30px; text-align: center; font-size: 18px; transition: var(--transition);}
+.btn-portifolio:hover{ opacity: 0.8}
+
+.img-modal{position: fixed; padding: 100px; background: rgba(0,0,0,0.8); width: 100%; height: 100%; z-index: 9999; top: 0; display: none; justify-content: center; align-items: center; animation-name: modalImg; animation-duration: 0.5s;}
+.box-modal img{width: 100%; height:100%; max-height: 600px; max-width: 600px;}
+.btn-modal-close{position: absolute; top:30px; color: #fff; right: 30px; font-size: 2em; cursor: pointer;}
+
+@keyframes modalImg{
+    0%{opacity: 0; transform: scale(0);}
+    100%{opacity: 1; transform: scale(1);}
+}
+
+@media (max-width: 850px){
+    .portifolio-box{flex-direction: column;}
+    .box-img{width: 100%;}
+    .title p{padding: 0 25px;}
+    .img-modal{padding: 0 20px;}
+    .box-modal img{width: 500px;}
 }
