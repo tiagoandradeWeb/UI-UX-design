@@ -31,5 +31,26 @@ function modalImage(){
                  });
 }
 
+function modalTeam(){
+    const btnInfo = document.querySelectorAll(".team-info");
+    
+    btnInfo.forEach(function(itens){
+       itens.addEventListener("click", function(event){
+        event.preventDefault();
+           target = itens.getAttribute("data-id");
+        const boxInfo = document.getElementById(target);
+           boxInfo.style.display="flex";
+           
+           const btnClose = document.querySelectorAll(".btn-close");
+           btnClose.forEach(function(btn){
+               btn.addEventListener("click", function(){
+               boxInfo.style.display="none";
+           });
+           })
+        });
+    });
+}
+
 menuMobile();
 modalImage();
+modalTeam();

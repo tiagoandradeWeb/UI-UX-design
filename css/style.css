@@ -17,7 +17,7 @@
 /*CSS Geral*/
 *{padding: 0; margin:0; box-sizing: border-box; outline: none; text-decoration: none; list-style: none;}
 img{max-width: 100%; display: block;}
-body, html{font-family: 'Roboto'; font-size: 100%;}
+body, html{font-family: 'Roboto'; font-size: 100%; position: relative;}
 .container{max-width: 1180px; margin: 0 auto;}
 .title{margin: 80px 0px; width: 100%; text-align: center;}
 .title h2{color: var(--primary); font-weight: 600;}
@@ -138,9 +138,25 @@ body, html{font-family: 'Roboto'; font-size: 100%;}
 	.team-box::before{width: 220px; height: 220px}
 }
 @media (max-width: 463px){
-    .team-box::before{width: 150px; height: 150px}
+    .team-box::before{width: 150px; height: 150px;}
 }
 
+#stephanieInfo-box, #wellingtonInfo-box, #richardInfo-box{width: 100%; height: 100%; position: fixed; overflow-y: hidden; top: 0; bottom: 0; left: 0; background: rgba(0,0,0,0.9); display: none; justify-content: center;align-content: center; align-items: center; z-index: 20000;}
+#stephanieInfo-box .btn-close, #wellingtonInfo-box .btn-close, #richardInfo-box .btn-close{position: absolute; right: 20px; top: 20px; color: #fff; font-size: 2em; cursor: pointer;}
+#stephanieInfo-box .info, #wellingtonInfo-box .info, #richardInfo-box .info{width: 70%; background: #fff; height: 450px; display: flex; padding:; justify-content: center; align-content: center; animation-name: infoTeam; animation-duration: .5s;}
+#stephanieInfo-box .info .col-img, #wellingtonInfo-box .info .col-img, #richardInfo-box .info .col-img{width: 30%; height: 100%; display: flex; justify-content: center; align-items: center; padding: 30px;}
+#stephanieInfo-box .info .col-img img, #wellingtonInfo-box .info .col-img img, #richardInfo-box .info .col-img img{width: 100%;}
+#stephanieInfo-box .info .col-info, #wellingtonInfo-box .info .col-info, #richardInfo-box .info .col-info{width: 70%; padding: 30px;}
+#stephanieInfo-box .info .col-info h2, #wellingtonInfo-box .info .col-info h2, #richardInfo-box .info .col-info h2{color: var(--primary);}
+#stephanieInfo-box .info .col-info h3, #wellingtonInfo-box .info .col-info h3, #richardInfo-box .info .col-info h3{color: var(--second); font-size: .9em;}
+#stephanieInfo-box .info .col-info .fa-graduation-cap, #wellingtonInfo-box .info .col-info .fa-graduation-cap, #richardInfo-box .info .col-info .fa-graduation-cap{color: var(--primary); font-size: 2em;}
+#stephanieInfo-box .info .col-info .box-formation, #wellingtonInfo-box .info .col-info .box-formation, #richardInfo-box .info .col-info .box-formation{margin-top: 30px;}
+#stephanieInfo-box .info .col-info .box-formation p, #wellingtonInfo-box .info .col-info .box-formation p, #richardInfo-box .info .col-info .box-formation p{color: var(--p); font-size: .9em;}
+
+@keyframes infoTeam{
+    0%{opacity: 0; }
+    100%{opacity: 1;}
+}
 /*Portifolio*/
 .portifolio-box{width: 100%; display: flex; flex-wrap: wrap; position: relative;}
 .box-img{width: 25%; overflow:hidden; position: relative;}
@@ -179,3 +195,38 @@ body, html{font-family: 'Roboto'; font-size: 100%;}
     .news .container .news-img{display: none;}
     .news .container .news-form{width: 100%; right: 0px; padding: 0 25px;}
 }
+
+/*testimony*/
+.testimony-section .container{display: flex;}
+.testimony-section .container .col-1{width: 50%; position: relative;}
+.testimony-section .container .col-img{width: 50%;}
+.testimony-section .container .col-img img{width: 450px; float: right;}
+.testimony{display: flex; width: 100%; overflow: hidden; height: 300px!important; position: relative;}
+.swiper-pagination{width: 100%; display: flex; position: absolute; margin-top: 10px; justify-content: center;}
+.swiper-pagination-clickable .swiper-pagination-bullet {background: var(--primary);}
+.swiper-pagination .swiper-pagination-bullet{background: var(--primary); padding: 6px; margin-left: 5px; opacity: 1;}
+.swiper-pagination .swiper-pagination-bullet-active{background: var(--second);}
+.box-testimony{display: flex; justify-content: center; align-items: center; padding: 20px;}
+.box-testimony.bg-1{background: var(--primary);}
+.box-testimony.bg-2{background: var(--second);}
+.box-testimony .img img{width: 250px; border-radius: 50%;}
+.box-testimony .message{padding-left: 20px; color: #fff; font-family: "Roboto";}
+.box-testimony .message p{font-size: 13px; font-weight: lighter;}
+.box-testimony .message h2{margin-top: 20px; font-size: 16px;}
+.box-testimony .message h3{font-size: 11px; font-weight: lighter;}
+
+@media (max-width: 850px){
+    .testimony-section .container{padding: 0;}
+    .testimony-section .container .col-img{display: none;}
+    .testimony-section .container .col-1{width: 100%;}
+    .testimony{height: 350px!important;}
+}
+/*Other Services*/
+.other-services-box{display: flex; margin-top: 100px;}
+.other-services-box .col{width: 33%; border: solid 3px var(--primary); margin-right: 30px; padding: 30px 20px; text-align: center; transition: var(--transition);}
+.other-services-box .col:last-child{margin-right: 0;}
+.other-services-box .col:hover{border: solid 3px var(--second);}
+.other-services-box .col:hover h2{color: var(--second);}
+.other-services-box .col img{width: 250px; margin: auto; margin-bottom: 20px;}
+.other-services-box .col h2{color: var(--primary); font-size: 2em; font-weight: bold; font-family: "Roboto"; margin-bottom: 20px;}
+.other-services-box .col p{font-size: .9em; color: var(--p);}
